@@ -7,7 +7,7 @@
 		<h1 class="h1">Cadastro de Idosos</h1>
 		<div class="col-md-8 order-md-1">
           <h4 class="mb-3">Billing address</h4>
-          	<form class="needs-validation" novalidate>
+          	<form class="needs-validation" novalidate action="/customer/create" method="post">
           		{{ csrf_field() }}
 	            <div class="row">
 	              <div class="col-md-8 mb-3">
@@ -169,15 +169,15 @@
 
 	          	<div class="d-block my-3">
 	              <div class="custom-control custom-radio">
-	                <input id="gravity_yes" name="gravity_alergy" type="radio" class="custom-control-input enabler" data-target="gravity_alergy" checked required value="1">
+	                <input id="gravity_yes" name="gravity" type="radio" class="custom-control-input enabler" data-target="gravity_alergy" checked required value="1">
 	                <label class="custom-control-label" for="gravity_yes">Sim</label>
 	              </div>
 	              <div class="custom-control custom-radio">
-	                <input id="gravity_no" name="gravity_alergy" type="radio" class="form-control custom-control-input disabler" data-target="gravity_alergy" required value="0">
+	                <input id="gravity_no" name="gravity" type="radio" class="form-control custom-control-input disabler" data-target="gravity_alergy" data-input="gravity_alergy" required value="0">
 	                <label class="custom-control-label" for="gravity_no">Não</label>
 	              </div>
 	              <div class="mt-2">
-	              	<input type="text" class="form-control" id="gravity_alergy" placeholder="" required>	
+	              	<input type="text" class="form-control" id="gravity_alergy" placeholder="" required value="">	
 	              </div>
 	              
 	            </div>
@@ -186,11 +186,11 @@
 
 	          	<div class="d-block my-3">
 	              <div class="custom-control custom-radio">
-	                <input id="deficiency_yes" name="deficiency" type="radio" class="custom-control-input enabler" data-target="deficiency" checked required value="1">
+	                <input id="deficiency_yes" name="deficiency_input" type="radio" class="custom-control-input enabler" data-target="deficiency" checked required value="1">
 	                <label class="custom-control-label" for="deficiency_yes">Sim</label>
 	              </div>
 	              <div class="custom-control custom-radio">
-	                <input id="deficiency_no" name="deficiency" type="radio" class="custom-control-input disabler" data-target="deficiency" required value="0">
+	                <input id="deficiency_no" data-input="deficiency" name="deficiency_input" type="radio" class="custom-control-input disabler" data-target="deficiency" required value="0">
 	                <label class="custom-control-label" for="deficiency_no">Não</label>
 	              </div>
 	              <div class="mt-2">
@@ -612,11 +612,11 @@
 
 	            <div class="d-block my-3">
 	              <div class="custom-control custom-radio">
-	                <input id="fracture_yes" name="caused_fracture" type="radio" class="custom-control-input enabler" data-target="caused_fracture" checked required value="1">
+	                <input id="fracture_yes" name="fracture" type="radio" class="custom-control-input enabler" data-target="caused_fracture" checked required value="1">
 	                <label class="custom-control-label" for="fracture_yes">Sim</label>
 	              </div>
 	              <div class="custom-control custom-radio">
-	                <input id="fracture_no" name="caused_fracture" type="radio" class="custom-control-input disabler" data-target="caused_fracture" required value="0">
+	                <input id="fracture_no" name="fracture" data-input="caused_fracture" type="radio" class="custom-control-input disabler" data-target="caused_fracture" required value="0">
 	                <label class="custom-control-label" for="fracture_no">Não</label>
 	              </div>
 	              <div class="mt-2">
@@ -890,6 +890,9 @@
 	              </div>
 	              
 	            </div>
+	            <button type="submit" class="btn btn-default">
+	            	ENVIAR
+	            </button>
 	        </form>
     	</div>
 	</div>
