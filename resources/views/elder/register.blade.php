@@ -11,8 +11,8 @@
           		{{ csrf_field() }}
 	            <div class="row">
 	              <div class="col-md-8 mb-3">
-	                <label for="firstName">Nome completo *:</label>
-	                <input type="text" class="form-control" id="firstName" placeholder="" value="" required name="customers_name">
+	                <label for="customer_name">Nome completo *:</label>
+	                <input type="text" class="form-control" id="customer_name" placeholder="" value="" required name="customer_name">
 	                <div class="invalid-feedback">
 	                  Valid first name is required.
 	                </div>
@@ -139,8 +139,8 @@
 	          	</div>
 
 	          	<div class="mb-3">
-	                <label for="ethnicity">Estado civil:*</label>
-	                <select class="custom-select d-block w-100" id="ethnicity" required name="ethnicity">
+	                <label for="civil_state">Estado civil:*</label>
+	                <select class="custom-select d-block w-100" id="civil_state" required name="civil_state">
 	                  <option value="solteiro">Solteiro (a)</option>
 	                  <option value="casado">Casado (a)</option>
 	                  <option value="divorciado">Divorciado (a)</option>
@@ -200,8 +200,8 @@
 	            </div>
 
 	            <div class="mb-3">
-	                <label for="ethnicity">Tipo sanguíneo:*</label>
-	                <select class="custom-select d-block w-100" id="ethnicity" required name="ethnicity">
+	                <label for="blood_type">Tipo sanguíneo:*</label>
+	                <select class="custom-select d-block w-100" id="blood_type" required name="blood_type">
 	                	<option value="">Não sabe informar</option>
 		                  <option value="a+">A+</option>
 		                  <option value="a-">A-</option>
@@ -235,14 +235,21 @@
 	            </div>
 
 	            <div class="row">
-	              <div class="col-md-8 mb-3">
+	              <div class="col-md-6 mb-3">
 	                <label for="city">Cidade *:</label>
 	                <input type="text" class="form-control" id="city" placeholder="" value="" required name="city">
 	                <div class="invalid-feedback">
 	                  Valid first name is required.
 	                </div>
 	              </div>
-	              <div class="col-md-4 mb-3">
+	              <div class="col-md-3 mb-3">
+	                <label for="number">Número:*</label>
+	                <input type="number" class="form-control" id="number" placeholder="" value="" required name="number">
+	                <div class="invalid-feedback">
+	                  Valid first name is required.
+	                </div>
+	              </div>
+	              <div class="col-md-3 mb-3">
 	                <label for="complement">Complemento:*</label>
 	                <input type="text" class="form-control" id="complement" placeholder="" value="" required name="complement">
 	                <div class="invalid-feedback">
@@ -250,7 +257,6 @@
 	                </div>
 	              </div>
 	            </div>
-
 	            <div class="row">
 	              <div class="col-md-8 mb-3">
 	                <label for="neighbourhood">Bairro *:</label>
@@ -262,8 +268,33 @@
 	              <div class="col-md-4 mb-3">
 	                <label for="state">UF:*</label>
 	                <select class="custom-select d-block w-100" id="state" required name="state">
-	                  <option value="">Choose...</option>
-	                  <option>California</option>
+	                  	<option value="AC">AC</option>
+		            	<option value="AC">AC</option>
+		            	<option value="AP">AP</option>
+		            	<option value="AM">AM</option>
+		            	<option value="BA">BA</option>
+		            	<option value="CE">CE</option>
+		            	<option value="DF">DF</option>
+		            	<option value="ES">ES</option>
+		            	<option value="GO">GO</option>
+		            	<option value="MA">MA</option>
+		            	<option value="MT">MT</option>
+		            	<option value="MS">MS</option>
+		            	<option value="MG">MG</option>
+		            	<option value="PA">PA</option>
+		            	<option value="PB">PB</option>
+		            	<option value="PR">PR</option>
+		            	<option value="PE">PE</option>
+		            	<option value="PI">PI</option>
+		            	<option value="RJ" selected>RJ</option>
+		            	<option value="RN">RN</option>
+		            	<option value="RS">RS</option>
+		            	<option value="RO">RO</option>
+		            	<option value="RR">RR</option>
+		            	<option value="SC">SC</option>
+		            	<option value="SP">SP</option>
+		            	<option value="SE">SE</option>
+		            	<option value="TO">TO</option>
 	                </select>
 	                <div class="invalid-feedback">
 	                  Please provide a valid state.
@@ -424,7 +455,7 @@
 
 	            <div class="mb-3">
 	                <label for="country">Em geral, comparando-se com outras pessoas de sua idade. Você diria que sua saúde é:</label>
-	                <select class="custom-select d-block w-100" id="country" required>
+	                <select class="custom-select d-block w-100" id="country" required name="compared_health">
 	                	<option value="excelente">Excelente</option>
 	                  <option value="muito boa">Muito boa</option>
 	                  <option value="boa">Boa</option>
@@ -620,7 +651,7 @@
 	                <label class="custom-control-label" for="fracture_no">Não</label>
 	              </div>
 	              <div class="mt-2">
-	              	<input type="text" class="form-control" id="caused_fracture" placeholder="" required>	
+	              	<input type="text" name="caused_fracture" class="form-control" id="caused_fracture" placeholder="" required>	
 	              </div>
 	              
 	            </div>
@@ -898,6 +929,12 @@
 	</div>
     
 </div>
+
+<!--
+<script type="text/javascript">
+	$("input[type=text]").val("teste");
+</script>
+-->
 
 <script type="text/javascript" src="/js/disabled.js"></script>
 
